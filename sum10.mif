@@ -1,0 +1,18 @@
+DEPTH = 11;
+WIDTH = 16;
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+CONTENT
+BEGIN
+0000 : 0a10;	-- mvi r0, 10	
+0001 : 0030;	-- mvi r1, 0	
+0002 : 0021;	-- add r1, r0	
+0003 : 0113;	-- cmpi r0, 1	
+0004 : 0059;	-- jz loopend	
+0005 : 0112;	-- subi r0, 1	
+0006 : ff78;	-- j .0b		
+0007 : 0010;	-- mvi r0, 0x00
+0008 : 1016;	-- mvhi r0, 0x10
+0009 : 0025;	-- st r1, r0
+000a : fff8;	-- inf: j inf
+END;
